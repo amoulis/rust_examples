@@ -23,11 +23,19 @@ struct Avengers {
    Thor : u16,
     
 }
+impl fmt::Display for Avengers {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "{} {} {}", self.IronMan, self.Hulk, self.Thor)
+    }
+}
+
 
 fn main() {
    let foo: u16 = 36;
    
    let  batman = Hero(1u32, 2u32);
+   let MightiestHeroes = Avengers { IronMan: 1, Hulk: 3, Thor: 255 };
    
    println!("Hello, world {}!", batman);
+   println!("Hello, world {}!", MightiestHeroes);
 }
