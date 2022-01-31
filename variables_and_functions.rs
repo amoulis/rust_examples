@@ -36,4 +36,16 @@ fn main() {
    //ret = add_value_32bits(pikachu, magikarp);
    //println!("And ret overflow is : {}", ret);
    //
+
+   //Array and slices
+   // Array
+   // Fixed-size array (type signature is superfluous)
+   //  name: [type; size] = [value]
+   let xs: [i32; 5] = [1, 2, 3, 4, 5];
+   // slice
+   let mySlice = &xs[1 .. 4];
+
+
+
+
 }
