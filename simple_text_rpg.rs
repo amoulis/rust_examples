@@ -1,6 +1,7 @@
 use std::fmt;
 use std::fmt::Display;
 use std::io;
+use std::process;
 
 // Structure Hero
 struct Hero {
@@ -26,13 +27,26 @@ fn add_choice(text: String) -> u32 {
    return choice;
 }
 
-fn main() {
+fn main()  {
     
-   let main_character = Hero { name: String::from("Knight"), life: 3, damages: 0 };
+   let mut main_character = Hero { name: String::from("Knight"), life: 3, damages: 0 };
    let mut choice :u32 = 0;
    //println!("The hero : {}", main_character);
    choice = add_choice(String::from("Grab the sword ?\n 1: yes 2: no"));
    
-    
-    
+   if choice == 1 
+   {
+      main_character.damages = 3;
+   } 
+   else if choice == 2 
+   {
+      main_character.damages = 0;
+   } 
+   else 
+   {
+      println!("Error");
+      process::exit(1);
+   }
+   
 }
+
