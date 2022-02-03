@@ -3,7 +3,9 @@ use std::fmt::Display;
 use std::io;
 use std::process;
 
-// Structure Hero
+/******************************************************************************
+ *                                   Structure Hero
+ ****************************************************************************/
 struct Hero {
     name : String,
     life : u8,
@@ -16,6 +18,12 @@ impl fmt::Display for Hero {
     }
 }
 
+/******************************************************************************
+ * fn add_choice(text: String) -> i32
+ * \brief function that returns usr choice
+ * @text : the text to display explaining what happends in the game
+ * @returns : the choice
+ ****************************************************************************/
 fn add_choice(text: String) -> i32 {
    
    let mut guess = String::new();
@@ -29,6 +37,13 @@ fn add_choice(text: String) -> i32 {
    return choice;
 }
 
+/******************************************************************************
+ * fn lose_health(health: u8, points: u8) ->
+ * \brief function that decrease player health and checks if he/she is not dead
+ * @health : the total health point before the damages are dealt
+ * @points : the damages to be dealt
+ * @returns : the remaining health points if the player is not dead
+ ****************************************************************************/
 fn lose_health(health: u8, points: u8) -> u8 {
    if health - points <= 0
    {
@@ -37,6 +52,10 @@ fn lose_health(health: u8, points: u8) -> u8 {
    }
    return health - points;
 }
+
+/******************************************************************************
+ * main function
+ *****************************************************************************/
 
 fn main()  {
     
