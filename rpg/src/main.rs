@@ -90,7 +90,7 @@ fn encounter_goblin(main_character: &mut Hero)
    }
    else if choice == 2
    {
-      if main_character.damages >= 3
+      if main_character.weapon == 1 || main_character.weapon == 2
       {
          println!("You have defeated the Goblin and continue your adventure.");
          println!("You search the pockets of the body of you ennemy and find 2 gold");
@@ -262,30 +262,6 @@ fn main()  {
       process::exit(1);
    }
 
-
-   choice = add_choice(String::from("You move sfitly into the shadows and suddenly your attacked by a goblin. What do you do?\n 1: try to flee 2: fight 3: surrender"));
-   if choice == 1
-   {
-      println!("You run into the shadows, you successfully avoided the goblin. However in you hurry you hit a wall and lose 1 life");
-      main_character.life = lose_health(main_character.life, 1);
-   }
-   else if choice == 2
-   {
-      if main_character.damages == 3
-      {
-         println!("You have defeated the Goblin and continue your adventure.");
-      }
-      else
-      {
-         println!("You died. Maybe pick the sword next time");
-         process::exit(0);
-      }
-   }
-   else
-   {
-      println!("Really? Surrendering, you died and deserved it.");
-      process::exit(0);
-   }
 
    // First part of dungeon 
    for x in 0..9 
